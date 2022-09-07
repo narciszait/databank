@@ -11,7 +11,7 @@ import UIKit
 
 
 // PRESENTER -> COORDINATOR
-protocol TablesCoordinatorInput: class {
+protocol TablesCoordinatorInput: AnyObject {
     
 }
 
@@ -23,7 +23,7 @@ protocol TablesInteractorInput {
 }
 
 // INTERACTOR -> PRESENTER (indirect)
-protocol TablesInteractorOutput: class {
+protocol TablesInteractorOutput: AnyObject {
     func present(_ response: Tables.Response.Tables)
     func present(_ response: Tables.Response.Error)
 }
@@ -41,7 +41,7 @@ protocol TablesPresenterInput {
 }
 
 // PRESENTER -> VIEW
-protocol TablesPresenterOutput: class {
+protocol TablesPresenterOutput: AnyObject {
     func display(_ displayModel: Tables.DisplayData.Tables)
     func display(_ error: Tables.DisplayData.Error)
 }

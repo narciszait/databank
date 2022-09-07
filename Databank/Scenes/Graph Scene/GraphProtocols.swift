@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 // PRESENTER -> COORDINATOR
-protocol GraphCoordinatorInput: class {
+protocol GraphCoordinatorInput: AnyObject {
 
 }
 
@@ -22,7 +22,7 @@ protocol GraphInteractorInput {
 }
 
 // INTERACTOR -> PRESENTER (indirect)
-protocol GraphInteractorOutput: class {
+protocol GraphInteractorOutput: AnyObject {
     func present(_ response: Graph.Response.Graph)
     func present(_ response: Graph.Response.Error)
 }
@@ -37,7 +37,7 @@ protocol GraphPresenterInput {
 }
 
 // PRESENTER -> VIEW
-protocol GraphPresenterOutput: class {
+protocol GraphPresenterOutput: AnyObject {
     func display(_ displayModel: Graph.DisplayData.Graph)
     func display(_ error: Graph.DisplayData.Error)
 }

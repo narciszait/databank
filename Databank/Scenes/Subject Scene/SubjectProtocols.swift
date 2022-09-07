@@ -13,7 +13,7 @@ import UIKit
 
 
 // PRESENTER -> COORDINATOR
-protocol SubjectCoordinatorInput: class {
+protocol SubjectCoordinatorInput: AnyObject {
     func navigate(route: Subject.Route)
 }
 
@@ -25,7 +25,7 @@ protocol SubjectInteractorInput {
 }
 
 // INTERACTOR -> PRESENTER (indirect)
-protocol SubjectInteractorOutput: class {
+protocol SubjectInteractorOutput: AnyObject {
     func present(_ response: Subject.Response.Subjects)
     func present(_ response: Subject.Response.Error)
 }
@@ -42,7 +42,7 @@ protocol SubjectPresenterInput {
 }
 
 // PRESENTER -> VIEW
-protocol SubjectPresenterOutput: class {
+protocol SubjectPresenterOutput: AnyObject {
     func display(_ displayModel: Subject.DisplayData.Subjects)
     func display(_ error: Subject.DisplayData.Error)
 }
